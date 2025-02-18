@@ -38,7 +38,14 @@
       "url": "https://u.expo.dev/fd778426-35c9-410d-a184-0a8d9b54295a"
     },
     "plugins": [
-      "expo-build-properties"
+      "expo-build-properties",
+      [
+        "@sentry/react-native/expo",
+        {
+          "organization": "SENTRY_ORG",
+          "project": "SENTRY_PROJECT"
+        }
+      ]
     ]
   }
 }

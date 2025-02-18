@@ -2,6 +2,13 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import Home from './screens/Home'
 import Calculator from './screens/Calculator'
+import * as Sentry from '@sentry/react-native'
+import { SENTRY_DSN } from './constants'
+
+Sentry.init({
+  dsn: SENTRY_DSN,
+  debug: true
+})
 
 export type RootStackParamList = {
   Home: undefined
@@ -21,4 +28,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Sentry.wrap(App)
